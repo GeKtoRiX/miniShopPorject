@@ -1,6 +1,6 @@
 import { useRef, useContext } from 'react';
 // Контекстная(Общая) функция доступа к массиву.
-import { CartContext } from '@/store/shopping-cart-context.jsx';
+import { CartContext } from '@/store/cart-context.jsx';
 
 // Диалоговое окно dialog.
 import CartModal from './CartModal.jsx';

@@ -1,13 +1,8 @@
-import { useState, createContext } from 'react';
+import { useState } from 'react';
 import { DUMMY_PRODUCTS } from '@/dummy-products.js';
+import { CartContext } from '@/store/cart-context.jsx';
 
 // Шаблон контекстного(общего) доступа.
-export const CartContext = createContext({
-  items: [],
-  addItemToCart: () => {},
-  UpdateItemQuantity: () => {},
-});
-
 export default function CartContextProvider({ children }) {
   // Корзина с товарами.
   const [shoppingCart, setShoppingCart] = useState({

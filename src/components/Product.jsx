@@ -1,7 +1,7 @@
 // Хук получения(Consume) доступа к общим данным Context.
 import { useContext } from 'react';
 // Контекстная(Общая) функция доступа к массиву.
-import { CartContext } from '@/store/shopping-cart-context.jsx';
+import { CartContext } from '@/store/cart-context.jsx';
 
 export default function Product({ id, image, title, price, description }) {
   // Массив товаров в корзине, Функция изменения кол-ва товара.

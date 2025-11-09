@@ -1,5 +1,5 @@
 // Контекстная(Общая) функция доступа к данным.
-import { CartContext } from '@/store/shopping-cart-context.jsx';
+import { CartContext } from '@/store/cart-context.jsx';
 
 export default function Cart() {
   // Массив товаров в корзине, Функция изменения кол-ва товара.
