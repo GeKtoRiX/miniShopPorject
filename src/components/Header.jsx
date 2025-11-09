@@ -1,10 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
+// Контекстная(Общая) функция доступа к массиву.
+import { CartContext } from '@/store/shopping-cart-context.jsx';
+
 // Диалоговое окно dialog.
 import CartModal from './CartModal.jsx';
 
-export default function Header({ shoppingCart, onUpdateCartItemQuantity }) {
+export default function Header() {
+  // Хук получения общего контекста(доступа) к массиву(Корзине) объектов(Товаров).
+  const { items } = useContext(CartContext);
+
   // Кол-во товара в корзине.
-  const cartQuantity = shoppingCart.items.length;
+  const cartQuantity = items.length;
 
   // Ref открытия диалогового окна dialog.
   const modal = useRef();
@@ -27,13 +33,7 @@ export default function Header({ shoppingCart, onUpdateCartItemQuantity }) {
 
   return (
     <>
-      <CartModal
-        ref={modal}
-        cartItems={shoppingCart.items}
-        onUpdateCartItemQuantity={onUpdateCartItemQuantity}
-        title='Your Cart'
-        actions={modalActions}
-      />
+      <CartModal ref={modal} title='Your Cart' actions={modalActions} />
       <header id='main-header'>
         <div id='main-title'>
           <img src='logo.png' alt='Elegant model' />
